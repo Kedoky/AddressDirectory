@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import org.springframework.lang.NonNull;
+
 import javax.persistence.*;
 
 @Entity
@@ -9,6 +11,7 @@ public class Town {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
+    @NonNull
     private String townName;
 
     public Town() { }
