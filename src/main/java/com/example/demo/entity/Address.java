@@ -37,11 +37,11 @@ public class Address {
         return id;
     }
 
-    public void setIdTownStreet(StreetsInTown streets_town){
+    public void setStreetsTown(StreetsInTown streets_town){
         this.streets_town = streets_town;
     }
 
-    public StreetsInTown getIdTownStreet() {
+    public StreetsInTown getStreetsTown() {
         return streets_town;
     }
 
