@@ -12,7 +12,7 @@
     <artifactId>TestTask</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Address directory</name>
-    <description>Test taks on spring junioer engineer developer true senioer mega boy 228</description>
+    <description>Test taks on spring junioer engineer developer</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
