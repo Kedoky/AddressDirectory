@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<style>
+    #navbar {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    #navbar li { display: inline; }
+    table {
+        border-collapse: collapse;
+    }
+    th, td {
+        border: 1px solid black;
+    }
+</style>
+<header>
+    <div>
+        <ul id="navbar">
+            <li><a href="person.html">Полная информация</a></li>
+            <li><a href="typesPhone.html">Вывести типы телефонов</a></li>
+            <li><a href="street.html">Улицы</a></li>
+            <li><a href="town.html">Города</a></li>
+            <li><a href="townStreets.html">Улицы в городах</a></li>
+        </ul>
+    </div>
+</header>
+<body>
+<br><br>
+<div>
+    <br>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Название города</th>
+        </tr>
+        <tr th:each="Town : ${Towns}">
+            <form method="post" th:action="@{/editTown}" th:object="${town}">
+                <td >
+                    <input type="text" name="id" readonly th:value="${Town.getId()}">
+                </td>
+                <td>
+                    <input type="text" name="townName" th:value="${Town.getTownName()}" value="">
+                </td>
+                <td><button type="submit" name="mode" value="delete">Удалить</button></td>
+                <td><button type="submit" name="mode" value="update">Изменить</button></td>
+            </form>
+        </tr>
+        <tr>
+            <form method="post" th:object="${town}">
+                <td><button type="submit">+(Add)</button></td>
+                <td>
+                    <input type="text" name="townName" placeholder="Введите название города: ">
+                </td>
+
+            </form>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
